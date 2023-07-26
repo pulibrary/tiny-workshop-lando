@@ -1,5 +1,8 @@
-# Lando Tiny Workshop
+# Tiny Workshop for Lando
 ## Tiny Workshop Series for Summer 2023
+
+### Presentation Materials
+- [Google Presentation](https://docs.google.com/presentation/d/1RW61OzHkTS_MxJ30TQMQ4rzgLE9PhVBpWzDWnVrV9X0/edit?usp=sharing)
 
 ### Getting Started
 
@@ -14,7 +17,6 @@ It should please be noted that the following are stated as requirements:
   - [macOS](https://docs.docker.com/desktop/install/mac-install/)
   - [Windows](https://docs.docker.com/desktop/install/windows-install/)
   - [Linux distributions](https://docs.docker.com/desktop/install/linux-install/)
-
 
 ### WordPress Example
 
@@ -34,5 +36,29 @@ $ lando list
 ```bash
 $ cd ./src/wordpress
 $ lando info
+```
+
+#### Download WordPress Core
+```bash
+$ lando wp core download
+```
+
+#### Generate WordPress Config. File
+```bash
+$ lando wp config create \
+  --dbname=wordpress \
+  --dbuser=wordpress \
+  --dbpass=wordpress \
+  --dbhost=database
+```
+
+#### Install WordPress
+```bash
+$ lando wp core install \
+  --url=https://wordpress-on-lando.lndo.site/ \
+  --title="WordPress on Lando" \
+  --admin_user=admin \
+  --admin_password=password \
+  --admin_email=admin@wordpress-on-lando.lndo.site
 ```
 
