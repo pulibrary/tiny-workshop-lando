@@ -1,0 +1,4 @@
+name: wordpress-on-lando
+recipe: wordpress
+config:
+  webroot: .
